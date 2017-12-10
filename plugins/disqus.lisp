@@ -10,7 +10,6 @@
   "<div id=\"disqus_thread\"></div>
   <script>
   var disqus_config = function () {
-  this.page.url = \"~A\";
   this.page.identifier = \"~A\";
   };
   (function() { // DON'T EDIT BELOW THIS LINE
@@ -25,6 +24,5 @@
 (defun enable (&key shortname site-url)
   (flet ((inject-p (x)
            (when (typep x 'post)
-             (format nil *disqus-header* site-url shortname shortname))))
+             (format nil *disqus-header* shortname shortname))))
     (add-injection #'inject-p :body)))
-
